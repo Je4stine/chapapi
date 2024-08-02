@@ -2,6 +2,8 @@ package com.msoftware.chapi.model;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,12 +19,13 @@ import java.util.Date;
 public class Products {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String name;
     private String description;
     private String brand;
     private BigDecimal Price;
     private String category;
-    private boolean availability;
+    private Boolean availability;
     private Date releaseDate;
 }
